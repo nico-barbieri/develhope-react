@@ -1,8 +1,8 @@
-import Counter from "./components/Counter";
+import ClickCounter from "./components/ClickCounter";
 
 function App() {
     return <>
-        <Counter initialValue={9} incrementBy={9} />
+        <ClickCounter initialValue={100} incrementBy={-1} />
     </>
 }
 
