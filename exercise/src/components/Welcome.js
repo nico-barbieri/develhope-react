@@ -1,4 +1,4 @@
-function Welcome({name}) {
+function Welcome({name = 'World'}) {
     return <p>Hello, {name}!</p>
 }
 
