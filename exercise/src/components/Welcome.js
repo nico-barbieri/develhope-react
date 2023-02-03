@@ -1,7 +1,9 @@
+import Age from "./Age";
+
 function Welcome({name = 'World', age}) {
     return <>
     <p>Hello, {name}!</p>
-    {age && <p>Your age is {age}</p>}
+    {age && <Age age={age} />}
     </>
 }
 
