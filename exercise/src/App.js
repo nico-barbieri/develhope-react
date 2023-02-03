@@ -2,7 +2,7 @@ import Counter from "./components/Counter";
 
 function App() {
     return <>
-        <Counter initialValue={3} incrementBy={3} />
+        <Counter initialValue={1000} incrementBy={-1} />
     </>
 }
 
