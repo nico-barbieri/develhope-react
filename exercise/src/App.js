@@ -1,7 +1,8 @@
-
-function App() {
-    const hello = <h1>Hello, world!</h1>
-    return hello
+import {Component} from 'react'
+class Hello extends Component {
+    render() {
+        return <h1>Hello, world!</h1>
+    }
 }
 
-export default App;
+export default Hello;
