@@ -1,6 +1,9 @@
+import Welcome from "./components/Welcome";
 
-function App({name}) {
-    return <h1>Hello, {name}!</h1>
+function App() {
+    return <>
+        <Welcome name="Nico"/>
+    </>
 }
 
 export default App;
