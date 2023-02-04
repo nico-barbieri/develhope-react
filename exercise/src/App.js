@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Login from "./components/Login";
+import UncontrolledLogin from "./components/UncontrolledLogin";
 
 function App() {
     const [state, setState] = useState()
@@ -16,7 +16,7 @@ function App() {
     }
 
     return <>
-        <Login onLogin={onLogin}/>
+        <UncontrolledLogin onLogin={onLogin}/>
         {(state.name && <div>
             <h1>Hello {state.name}</h1>
             <p>Your password is {state.password}</p>
