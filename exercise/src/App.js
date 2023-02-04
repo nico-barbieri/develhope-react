@@ -1,8 +1,27 @@
+import { useState } from "react";
 import Login from "./components/Login";
 
 function App() {
+    const [state, setState] = useState()
+    
+    const onLogin = (user) => {
+        setState(state => {
+            return {
+                ...state,
+                name: user.name,
+                password: user.password,
+                remember: user.remember,
+            }
+        })
+    }
+
     return <>
-        <Login />
+        <Login onLogin={onLogin}/>
+        {(state && <div>
+            <h1>Hello {state.name}</h1>
+            <p>Your password is {state.password}</p>
+            <p>You have{!state.remember && <>n't</>} checked the box</p>
+        </div>)}
     </>
 }
 
