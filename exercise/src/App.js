@@ -1,8 +1,8 @@
-import Welcome from "./components/Welcome";
+import InteractiveWelcome from "./components/InteractiveWelcome";
 
 function App() {
     return <>
-        <Welcome name="Nico"/>
+        <InteractiveWelcome />
     </>
 }
 
