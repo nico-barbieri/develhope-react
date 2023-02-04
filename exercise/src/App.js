@@ -17,7 +17,7 @@ function App() {
 
     return <>
         <Login onLogin={onLogin}/>
-        {(state && <div>
+        {(state.name && <div>
             <h1>Hello {state.name}</h1>
             <p>Your password is {state.password}</p>
             <p>You have{!state.remember && <>n't</>} checked the box</p>

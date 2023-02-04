@@ -21,6 +21,17 @@ function Login(prop) {
         e.preventDefault();
         prop.onLogin(state);
     }
+
+    const handleReset = () => {
+        setState((state) =>{
+            return {
+                ...state,
+                name: '',
+                password: '',
+                remember: false,
+            }
+        })
+    }
     
     return <>
     <form onSubmit={handleSubmit}>
@@ -28,6 +39,7 @@ function Login(prop) {
         <input name='password' type='password' value={state.password} onChange={handleInput} />
         <input name='remember' type='checkbox' value={state.remember} onChange={handleInput} />
         <button type='submit' disabled={!state.name || !state.password}>login</button>
+        <button onClick={handleReset}>reset</button>
     </form>
     </>
 }
