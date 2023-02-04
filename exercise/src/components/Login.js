@@ -9,11 +9,12 @@ function Login() {
 
     const handleInput = (e) => {
         const {name, type, value, checked} = e.target;
-        setState(
-            {
+        setState(state =>{
+            return {
+                ...state,
                 [name]: (type === 'checkbox') ? checked : value
             }
-        )
+        })
     }
     return <>
         <input name='name' value={state.name} onChange={handleInput} />
