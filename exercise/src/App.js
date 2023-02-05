@@ -1,8 +1,10 @@
-import Welcome from "./components/Welcome";
+import Container from "./components/Container";
 
 function App() {
     return <>
-        <Welcome className="welcome" /* name={'Nico'} */ />
+        <Container>
+            <h1>Hello World!</h1>
+        </Container>
     </>
 }
 
