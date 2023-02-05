@@ -1,8 +1,8 @@
-import Component from "./components/Component";
+import Welcome from "./components/Welcome";
 
 function App() {
     return <>
-        <Component />
+        <Welcome className="welcome" /* name={'Nico'} */ />
     </>
 }
 

@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.welcome {
+    padding: 2rem;
+    border: .5rem solid rgb(220, 170, 10);
+    color: antiquewhite;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: linear-gradient(180deg, rgb(20, 110, 175), rgb(8, 84, 138));
+}
