@@ -4,10 +4,33 @@
     box-sizing: border-box;
 }
 
-.welcome {
+.form {
+    display: flex;
+    gap: 2rem;
+    align-items: baseline;
     padding: 2rem;
     border: .5rem solid rgb(220, 170, 10);
     color: antiquewhite;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background: linear-gradient(180deg, rgb(20, 110, 175), rgb(8, 84, 138));
+}
+
+input {
+    padding: .5rem;
+}
+button {
+    padding: .5rem;
+    border: none;
+}
+.submit-not-allowed {
+    background: rgb(220, 10, 10);
+    color: antiquewhite;
+}
+.submit-allowed {
+    background: rgb(10, 220, 10);
+    color: black;
+}
+.submit-allowed:active {
+    scale: .95;
+    opacity: .8;
 }

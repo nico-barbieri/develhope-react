@@ -1,8 +1,8 @@
-import Welcome from "./components/Welcome";
+import Login from "./components/Login";
 
 function App() {
     return <>
-        <Welcome className="welcome" /* name={'Nico'} */ />
+        <Login />
     </>
 }
 
