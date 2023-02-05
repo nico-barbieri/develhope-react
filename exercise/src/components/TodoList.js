@@ -58,13 +58,23 @@ function TodoList() {
         });
     }
 
-    const itemsList = state.items.map(todoItem => (
+    /* const itemsList = state.items.map(todoItem => (
+            <li key={todoItem.id}>
+                {todoItem.todo}
+                <input type='checkbox' value={todoItem.completed} />
+                <button onClick={handleDelete} data-id={todoItem.id}>DELETE</button>
+            </li>
+        )) */
+
+    const renderList = (items, deleteBtn) => {
+        return state.items.map(todoItem => (
             <li key={todoItem.id}>
                 {todoItem.todo}
                 <input type='checkbox' value={todoItem.completed} />
                 <button onClick={handleDelete} data-id={todoItem.id}>DELETE</button>
             </li>
         ))
+    }
 
     return <div>
         <form onSubmit={handleNewTodo}>
@@ -72,7 +82,7 @@ function TodoList() {
             <button type="submit">ADD</button>
             <button onClick={handleReset}>RESET</button>
         </form>
-        <ul>{itemsList}</ul>
+        <ul>{renderList(state.items, handleDelete)}</ul>
     </div>
 }
 
