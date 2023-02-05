@@ -1,6 +1,9 @@
+import TodoList from "./components/TodoList";
 
-function App({num1, num2}) {
-    return <h2>Sum: {num1 + num2}</h2>
+function App() {
+    return <>
+        <TodoList />
+    </>
 }
 
 export default App;
