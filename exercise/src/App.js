@@ -1,8 +1,8 @@
-import Component from "./components/Component";
+import TodoList from "./components/TodoList";
 
 function App() {
     return <>
-        <Component />
+        <TodoList />
     </>
 }
 
