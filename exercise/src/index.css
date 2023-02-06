@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: content-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+.todo {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1rem;
+  background: rgb(30, 45, 70);
+  font-family: "Segoe UI";
+  font-size: 1.5rem;
+  color: rgb(190, 200, 220);
+}
+.todo .todo-form {
+  display: flex;
+  gap: 1rem;
+}
+.todo .todo-form input {
+  background-color: rgb(190, 200, 220);
+  color: rgb(30, 45, 70);
+  outline: none;
+  padding: 0.5rem 1rem;
+  font: inherit;
+  flex: 1;
+  font-size: 1rem;
+}
+.todo .todo-form button {
+  height: 100%;
+  padding: 0.5rem 1rem;
+  font: inherit;
+  font-size: 1rem;
+  color: rgb(190, 200, 220);
+  background: rgb(55, 75, 105);
+}
+.todo .todo-list {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 1rem;
+}
+.todo .todo-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  background: rgb(75, 120, 190);
+  transition: all 0.3s cubic-bezier(0, 0.65, 0, 1);
+  -webkit-animation: pop-up 0.3s cubic-bezier(0, 0.65, 0, 1) forwards;
+          animation: pop-up 0.3s cubic-bezier(0, 0.65, 0, 1) forwards;
+}
+.todo .todo-list li:has(input:checked) {
+  background: rgb(55, 75, 105);
+}
+.todo .todo-list li.to-delete {
+  opacity: 0;
+  transform: scaleY(0%);
+}
+.todo .todo-list li input {
+  position: relative;
+  height: 1rem;
+  width: 1rem;
+  margin-right: 1rem;
+}
+.todo .todo-list li input::after {
+  content: "";
+  opacity: 1;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgb(190, 200, 220);
+}
+.todo .todo-list li span {
+  flex: 1;
+}
+.todo .todo-list li button {
+  height: 100%;
+  padding: 0.5rem 1rem;
+  font: inherit;
+  font-size: 1rem;
+  color: rgb(190, 200, 220);
+  background: rgb(55, 75, 105);
+}
+
+@-webkit-keyframes pop-up {
+  from {
+    scale: 0;
+    opacity: 0;
+  }
+  to {
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+@keyframes pop-up {
+  from {
+    scale: 0;
+    opacity: 0;
+  }
+  to {
+    scale: 1;
+    opacity: 1;
+  }
+}/*# sourceMappingURL=index.css.map */

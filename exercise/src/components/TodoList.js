@@ -42,11 +42,14 @@ function TodoList() {
             return item.id === deletedID
         });
         state.items.splice(deletedIndex, 1);
-        setState(state => {
-            return {
-                ...state,
-            }
-        });
+        e.target.parentElement.className = 'to-delete';
+        setTimeout(() => {
+            setState(state => {
+                return {
+                    ...state,
+                }
+            });  
+        }, 300);
     }
 
     const handleReset = () => {
@@ -69,20 +72,21 @@ function TodoList() {
     const renderList = (items, deleteBtn) => {
         return state.items.map(todoItem => (
             <li key={todoItem.id}>
-                {todoItem.todo}
                 <input type='checkbox' value={todoItem.completed} />
+                <span>{todoItem.todo}</span>
                 <button onClick={handleDelete} data-id={todoItem.id}>DELETE</button>
             </li>
         ))
     }
 
-    return <div>
-        <form onSubmit={handleNewTodo}>
+    return <div className="todo">
+        <h1>Todo List</h1>
+        <form onSubmit={handleNewTodo} className="todo-form">
             <input name="newTodo" value={state.newTodo} onChange={handleInput} />
             <button type="submit">ADD</button>
             <button onClick={handleReset}>RESET</button>
         </form>
-        <ul>{renderList(state.items, handleDelete)}</ul>
+        <ul className="todo-list" >{renderList(state.items, handleDelete)}</ul>
     </div>
 }
 
