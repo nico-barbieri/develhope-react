@@ -15,7 +15,10 @@ function DisplayLanguage() {
     <LanguageContext.Consumer>
         {language => {
             return(
+                <>
                 <h1>{text[language].TITLE}</h1>
+                <p>(The value received from provider is: {language})</p>
+                </>
             )
         }}
     </LanguageContext.Consumer>    
