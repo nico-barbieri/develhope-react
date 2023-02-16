@@ -38,7 +38,7 @@ function Login(prop) {
     <form onSubmit={handleSubmit}>
         <input name='name' value={state.name} onChange={handleInput} />
         <input name='password' type='password' value={state.password} onChange={handleInput} />
-        <input name='remember' type='checkbox' value={state.remember} onChange={handleInput} />
+        <input name='remember' type='checkbox' checked={state.remember} onChange={handleInput} />
         <button type='submit' disabled={!state.name || !state.password}>login</button>
         <button onClick={handleReset}>reset</button>
     </form>
