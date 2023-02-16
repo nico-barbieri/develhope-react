@@ -31,6 +31,7 @@ function Login(prop) {
                 remember: false,
             }
         })
+        console.log(state);
     }
     
     return <>

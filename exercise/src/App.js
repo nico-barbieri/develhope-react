@@ -2,7 +2,11 @@ import { useState } from "react";
 import Login from "./components/Login";
 
 function App() {
-    const [state, setState] = useState()
+    const [state, setState] = useState({
+        name: '',
+        password: '',
+        remember: false,
+    })
     
     const onLogin = (user) => {
         setState(state => {
