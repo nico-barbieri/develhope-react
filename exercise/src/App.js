@@ -1,8 +1,9 @@
-import Component from "./components/Component";
+import GithubUser from "./components/GithubUser";
+import Canvas from "./components/test";
 
-function App() {
+function App() {    
     return <>
-        <Component />
+        <GithubUser /* username='nico-barbieri' */ />
     </>
 }
 
