@@ -2,16 +2,22 @@ import { useEffect, useState } from "react";
 
 function GithubUser({username}){
 
-    const [data, setData] = useState({})
+    const [user, setUser] = useState(null)
 
     const fetchUser = (username) => {
         fetch(`https://api.github.com/users/${username}`)
         .then(response =>{
-            return response.json()
+            if (response.ok) {
+                return response.json()
+            } else {             
+                throw new Error('Something went wrong');
+            }
         })
         .then(json => {
-            setData(json)
+            setUser(json)
+            console.log(user);
         })
+        .catch(error => alert(error));
     }
 
     useEffect(() => {
@@ -20,8 +26,8 @@ function GithubUser({username}){
     
     return (
         <div>
-            {data? <h1>{data.user.name}</h1>
-            :<p>Something went wrong</p>}
+            {user? <h1>{user.name}</h1>
+            :<p>User not found</p>}
         </div>
     )
 }
