@@ -70,7 +70,7 @@ function TodoList() {
         )) */
 
     const renderList = (items, deleteBtn) => {
-        return state.items.map(todoItem => (
+        return items.map(todoItem => (
             <li key={todoItem.id}>
                 <input type='checkbox' value={todoItem.completed} />
                 <span>{todoItem.todo}</span>
