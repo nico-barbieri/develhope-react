@@ -1,8 +1,8 @@
-import Counter from "./components/Counter";
+import Login from "./components/Login";
 
 function App() {    
     return <>
-        <Counter initialValue={10} step={-1} />
+        <Login />
     </>
 }
 
