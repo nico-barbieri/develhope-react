@@ -1,8 +1,8 @@
-import GithubUser from "./components/GithubUser";
+import GithubUserList from "./components/GithubUserList";
 
 function App() {    
     return <>
-        <GithubUser username='nico-barbieri' />
+        <GithubUserList />
     </>
 }
 

@@ -1,0 +1,166 @@
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica, sans-serif;
+  transition: all ease 0.3s;
+  box-sizing: border-box;
+}
+
+button {
+  position: relative;
+  overflow: hidden;
+  padding: 0 0.5rem;
+  background: #2357ab;
+  border: 2px solid #c7d3e6;
+  color: #c7d3e6;
+  cursor: pointer;
+  z-index: 10;
+}
+button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: top;
+  height: 0.5rem;
+  width: 200%;
+  background: #c7d3e6;
+  rotate: 45deg;
+  transition: all ease 0.3s;
+  z-index: -1;
+}
+button:hover {
+  color: #2357ab;
+}
+button:hover::after {
+  height: 6rem;
+}
+button:disabled {
+  background: transparent;
+  overflow: hidden;
+  color: #c7d3e6;
+  opacity: 0.66 !important;
+  cursor: not-allowed !important;
+  position: relative;
+}
+button:disabled::after {
+  content: none;
+}
+
+.header {
+  padding: 1rem;
+  background: #2357ab;
+  display: flex;
+  gap: 1rem;
+}
+.header h1 {
+  flex: 1;
+  color: #c7d3e6;
+}
+.header form {
+  display: flex;
+  gap: 1rem;
+}
+.header form * {
+  border-radius: 0.5rem;
+}
+.header form .input-container {
+  border: 2px solid #c7d3e6;
+  z-index: 10;
+  position: relative;
+  overflow: hidden;
+  z-index: 10;
+}
+.header form .input-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: top;
+  height: 0rem;
+  width: 200%;
+  background: #c7d3e6;
+  rotate: 45deg;
+  transition: all ease 0.3s;
+  z-index: -1;
+}
+.header form .input-container:has(input:hover)::after {
+  height: 0.5rem;
+}
+.header form .input-container:has(input:focus)::after {
+  height: 10rem;
+}
+.header form .input-container input {
+  padding: 0.5rem;
+  background: transparent;
+  color: #c7d3e6;
+  outline: none;
+}
+.header form .input-container input::-moz-placeholder {
+  color: #c7d3e6;
+}
+.header form .input-container input:-ms-input-placeholder {
+  color: #c7d3e6;
+}
+.header form .input-container input::placeholder {
+  color: #c7d3e6;
+}
+.header form .input-container input:focus {
+  color: #2357ab;
+}
+
+.users-container {
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: stretch;
+  gap: 2rem;
+  background: #1c3f77;
+  color: #c7d3e6;
+}
+.users-container .user-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 22rem;
+  flex: 1;
+  background: #2357ab;
+  border-radius: 1rem;
+}
+.users-container .user-container .user-not-found {
+  flex: 1;
+}
+.users-container .user-container h2 {
+  margin: 0.5rem 0rem;
+}
+.users-container .user-container .user-wrapper {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0.5rem;
+  background: #c7d3e6;
+  width: 100%;
+}
+.users-container .user-container .user-wrapper .propic-container {
+  background: #c7d3e6;
+  height: 8rem;
+  width: 8rem;
+  min-height: 8rem;
+  min-width: 8rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.users-container .user-container .user-wrapper .propic-container img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.users-container .user-container .user-wrapper .user-info {
+  color: #1c3f77;
+}
+.users-container .user-container button {
+  align-self: flex-end;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  margin: 0.5rem 0.5rem;
+}/*# sourceMappingURL=index.css.map */
