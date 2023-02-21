@@ -22,7 +22,7 @@ function GithubUser({username}){
             {!loading
             ? <div>
                 {user && <>
-                <h1>{user.name? user.name : username}</h1>
+                <h1>{user.name? user.name : user.login}</h1>
                 <img src={user.avatar_url}></img>
                 </>}
                 {err && <p>{err.message}</p>}
