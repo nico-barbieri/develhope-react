@@ -1,28 +1,8 @@
-import { useEffect, useState } from "react";
+import useGithubUser from "../hooks/useGithubUser";
 
 function GithubUser({username}){
 
-    const [user, setUser] = useState(null)
-
-    const fetchUser = (username) => {
-        fetch(`https://api.github.com/users/${username}`)
-        .then(response =>{
-            if (response.ok) {
-                return response.json()
-            } else {             
-                throw new Error('Something went wrong');
-            }
-        })
-        .then(json => {
-            setUser(json)
-            console.log(user);
-        })
-        .catch(error => alert(error));
-    }
-
-    useEffect(() => {
-        fetchUser(username)
-    },[username])
+    const {user} = useGithubUser(username);
     
     return (
         <div>
