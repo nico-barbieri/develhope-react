@@ -1,14 +1,36 @@
+import { useState } from "react";
 import useGithubUser from "../hooks/useGithubUser";
 
 function GithubUser({username}){
+    const [newUsername, setNewUsername] = useState('');
 
-    const {user} = useGithubUser(username);
+    const {user, err, loading, fetchUser} = useGithubUser(username);
     
+    const handleClick = () => {
+        username = newUsername
+        fetchUser(username)
+    }
+
+    const handleInput = e => {
+        const {value} = e.target;
+        setNewUsername(value)
+    }
+
+
     return (
-        <div>
-            {user? <h1>{user.name}</h1>
-            :<p>User not found</p>}
-        </div>
+        <>
+            {!loading
+            ? <div>
+                {user && <>
+                <h1>{user.name? user.name : username}</h1>
+                <img src={user.avatar_url}></img>
+                </>}
+                {err && <p>{err.message}</p>}
+            </div>
+            : <p>loading...</p>}
+            <button onClick={handleClick}>load user</button>
+            <input onInput={handleInput} value={newUsername} placeholder='enter a github username'/>
+        </>
     )
 }
 

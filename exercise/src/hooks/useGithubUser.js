@@ -2,8 +2,13 @@ import { useEffect, useState } from "react";
 
 const useGithubUser = (username) => {
     const [user, setUser] = useState(null)
+    const [err, setErr] = useState(null)
+    const [loading, setLoading] = useState(false)
+
 
     const fetchUser = (username) => {
+        setLoading(true);
+        setErr(null);
         fetch(`https://api.github.com/users/${username}`)
         .then(response =>{
             if (response.ok) {
@@ -14,9 +19,14 @@ const useGithubUser = (username) => {
         })
         .then(json => {
             setUser(json)
-            console.log(user);
         })
-        .catch(error => alert(error));
+        .catch(error => {
+            setErr(error),
+            setUser(null)
+        })
+        .finally(() => {
+            setLoading(false)
+        })
     }
 
     useEffect(() => {
@@ -24,7 +34,7 @@ const useGithubUser = (username) => {
     },[username])
 
     return {
-        user: user,
+        user, err, loading, fetchUser
     }
 }
 

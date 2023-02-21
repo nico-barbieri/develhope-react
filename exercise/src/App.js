@@ -2,7 +2,7 @@ import GithubUser from "./components/GithubUser";
 
 function App() {    
     return <>
-        <GithubUser username='nico-barbieri' />
+        <GithubUser username='billgates' />
     </>
 }
 
