@@ -1,7 +1,4 @@
-import { useParams } from "react-router-dom";
-
-function Welcome() {
-    const {name = 'World'} = useParams();
+function Welcome({name}) {
     return <>
     <h2>Hello, <strong>{name}</strong>!</h2>
     </>

@@ -13,13 +13,16 @@ function App() {
             <Link to="/users/">Github User</Link>
         </nav>
         <Routes>
-            <Route path="/" element={<Welcome />} />
-            <Route path="/:name" element={<Welcome />} />
+            <Route path="/" element={<Welcome name='Nico'/>} />
             <Route path="counter" element={<ClickCounter />}/>
             <Route path="users">
                 <Route index element={<p>no username provided</p>}/>
                 <Route path=":username" element={<ShowGithubUser />}/>
             </Route>
+            <Route path="*" element={<div>
+                <div>This page does not exist</div>
+                <Link to='/'>GO HOME</Link>
+                </div>} />
         </Routes>
     </div>
     </>
