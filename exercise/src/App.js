@@ -1,8 +1,12 @@
-import Component from "./components/Component";
+import { Route, Routes } from "react-router-dom";
+import Welcome from "./components/Welcome";
 
 function App() {    
     return <>
-        <Component />
+        <Routes>
+            <Route path="/" element={<Welcome />} />
+            <Route path="/:name" element={<Welcome />} />
+        </Routes>
     </>
 }
 

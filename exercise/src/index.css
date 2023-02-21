@@ -5,45 +5,4 @@
   font-family: Helvetica, sans-serif;
   transition: all ease 0.3s;
   box-sizing: border-box;
-}
-
-button {
-  position: relative;
-  overflow: hidden;
-  padding: 0 0.5rem;
-  background: #2357ab;
-  border: 2px solid #c7d3e6;
-  color: #c7d3e6;
-  cursor: pointer;
-  z-index: 10;
-}
-button::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform-origin: top;
-  height: 0.5rem;
-  width: 200%;
-  background: #c7d3e6;
-  rotate: 45deg;
-  transition: all ease 0.3s;
-  z-index: -1;
-}
-button:hover {
-  color: #2357ab;
-}
-button:hover::after {
-  height: 6rem;
-}
-button:disabled {
-  background: transparent;
-  overflow: hidden;
-  color: #c7d3e6;
-  opacity: 0.66 !important;
-  cursor: not-allowed !important;
-  position: relative;
-}
-button:disabled::after {
-  content: none;
 }/*# sourceMappingURL=index.css.map */
